@@ -2,9 +2,9 @@
 
 namespace Dnridwn\LaravelFileMaker;
 
+use Dnridwn\LaravelFileMaker\Commands\LaravelFileMakerCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Dnridwn\LaravelFileMaker\Commands\LaravelFileMakerCommand;
 
 class LaravelFileMakerServiceProvider extends PackageServiceProvider
 {

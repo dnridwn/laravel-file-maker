@@ -2,9 +2,9 @@
 
 namespace Dnridwn\LaravelFileMaker\Tests;
 
+use Dnridwn\LaravelFileMaker\LaravelFileMakerServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Dnridwn\LaravelFileMaker\LaravelFileMakerServiceProvider;
 
 class TestCase extends Orchestra
 {
