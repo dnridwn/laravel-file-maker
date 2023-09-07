@@ -22,10 +22,7 @@ class LaravelFileMakerServiceProvider extends PackageServiceProvider
             ->hasCommands([
                 ServiceMakerCommand::class,
                 InterfaceMakerCommand::class,
-<<<<<<< Updated upstream
-=======
                 RepositoryMakerCommand::class
->>>>>>> Stashed changes
             ]);
     }
 }
