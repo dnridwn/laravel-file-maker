@@ -9,7 +9,7 @@ Package for generating file in your Laravel project such as Service, Interface, 
 You can install the package via composer:
 
 ```bash
-composer require dnridwn/laravel-file-maker
+composer require --dev dnridwn/laravel-file-maker
 ```
 
 ## Usage
