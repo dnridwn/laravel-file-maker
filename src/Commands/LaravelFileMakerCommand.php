@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Dnridwn\LaravelFileMaker\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelFileMakerCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-file-maker';
 
     public $description = 'My command';
 
