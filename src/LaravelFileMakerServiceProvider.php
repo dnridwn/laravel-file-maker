@@ -20,7 +20,7 @@ class LaravelFileMakerServiceProvider extends PackageServiceProvider
             ->name('laravel-file-maker')
             ->hasCommands([
                 ServiceMakerCommand::class,
-                InterfaceMakerCommand::class
+                InterfaceMakerCommand::class,
             ]);
     }
 }
