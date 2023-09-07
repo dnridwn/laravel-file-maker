@@ -1,19 +1,8 @@
-# This is my package laravel-file-maker
+# Laravel File Maker
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/dnridwn/laravel-file-maker.svg?style=flat-square)](https://packagist.org/packages/dnridwn/laravel-file-maker)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/dnridwn/laravel-file-maker/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/dnridwn/laravel-file-maker/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/dnridwn/laravel-file-maker/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/dnridwn/laravel-file-maker/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/dnridwn/laravel-file-maker.svg?style=flat-square)](https://packagist.org/packages/dnridwn/laravel-file-maker)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-file-maker.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-file-maker)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+Package for generating file in your Laravel project such as Service, Interface, Repository and more.
 
 ## Installation
 
@@ -23,43 +12,30 @@ You can install the package via composer:
 composer require dnridwn/laravel-file-maker
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-file-maker-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="laravel-file-maker-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-file-maker-views"
-```
-
 ## Usage
 
-```php
-$laravelFileMaker = new Dnridwn\LaravelFileMaker();
-echo $laravelFileMaker->echoPhrase('Hello, Dnridwn!');
-```
+#### Creating Service Class
 
-## Testing
+You can run this command in your terminal. It will generate new file inside `app/Services` folder of your Laravel project.
 
 ```bash
-composer test
+php artisan make:service
+```
+
+#### Creating Interface Class
+
+You can run this command in your terminal. It will generate new file inside `app/Interfaces` folder of your Laravel project.
+
+```bash
+php artisan make:interface
+```
+
+#### Creating Repository Class
+
+You can run this command in your terminal. It will generate new file inside `app/Repositories` folder of your Laravel project.
+
+```bash
+php artisan make:repository
 ```
 
 ## Changelog
@@ -69,10 +45,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 
