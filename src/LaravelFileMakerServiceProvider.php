@@ -3,6 +3,7 @@
 namespace Dnridwn\LaravelFileMaker;
 
 use Dnridwn\LaravelFileMaker\Commands\InterfaceMakerCommand;
+use Dnridwn\LaravelFileMaker\Commands\RepositoryMakerCommand;
 use Dnridwn\LaravelFileMaker\Commands\ServiceMakerCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -21,6 +22,10 @@ class LaravelFileMakerServiceProvider extends PackageServiceProvider
             ->hasCommands([
                 ServiceMakerCommand::class,
                 InterfaceMakerCommand::class,
+<<<<<<< Updated upstream
+=======
+                RepositoryMakerCommand::class
+>>>>>>> Stashed changes
             ]);
     }
 }

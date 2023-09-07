@@ -7,23 +7,23 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Pluralizer;
 
 /**
- * Class ServiceMakerCommand
+ * Class RepositoryMakerCommand
  */
-class ServiceMakerCommand extends Command
+class RepositoryMakerCommand extends Command
 {
     /**
      * The signature of the command.
      *
      * @var string
      */
-    public $signature = 'make:service {name}';
+    public $signature = 'make:repository {name}';
 
     /**
      * The description of the command.
      *
      * @var string
      */
-    public $description = 'Make a Service Class';
+    public $description = 'Make a Repository Class';
 
     /**
      * The filesystem instance.
@@ -78,7 +78,7 @@ class ServiceMakerCommand extends Command
      */
     public function getStubPath(): string
     {
-        return __DIR__.'../../../stubs/service.stub';
+        return __DIR__.'../../../stubs/repository.stub';
     }
 
     /**
@@ -87,7 +87,7 @@ class ServiceMakerCommand extends Command
     public function getStubVariable(): array
     {
         return [
-            'NAMESPACE' => 'App\\Services',
+            'NAMESPACE' => 'App\\Repositories',
             'CLASS_NAME' => $this->getSingularClassName($this->argument('name')),
         ];
     }
@@ -119,7 +119,7 @@ class ServiceMakerCommand extends Command
      */
     public function getSourceFilePath(): string
     {
-        return base_path('app/Services/').$this->getSingularClassName($this->argument('name')).'Service.php';
+        return base_path('app/Repositories/').$this->getSingularClassName($this->argument('name')).'Repository.php';
     }
 
     /**
