@@ -3,13 +3,11 @@
 namespace Dnridwn\LaravelFileMaker\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Pluralizer;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Pluralizer;
 
 /**
  * Class ServiceMakerCommand
- *
- * @package Dnridwn\LaravelFileMaker\Commands
  */
 class ServiceMakerCommand extends Command
 {
@@ -37,7 +35,6 @@ class ServiceMakerCommand extends Command
     /**
      * Create a new command instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
      * @return void
      */
     public function __construct(Filesystem $files)
@@ -49,8 +46,6 @@ class ServiceMakerCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
     public function handle(): int
     {
@@ -60,7 +55,7 @@ class ServiceMakerCommand extends Command
 
         $contents = $this->getSourceFile();
 
-        if (!$this->files->exists($path)) {
+        if (! $this->files->exists($path)) {
             $this->files->put($path, $contents);
             $this->info("File : {$path} created");
         } else {
@@ -72,9 +67,6 @@ class ServiceMakerCommand extends Command
 
     /**
      * Get the singular class name.
-     *
-     * @param  string  $name
-     * @return string
      */
     public function getSingularClassName(string $name): string
     {
@@ -83,31 +75,25 @@ class ServiceMakerCommand extends Command
 
     /**
      * Get the path to the stub file.
-     *
-     * @return string
      */
     public function getStubPath(): string
     {
-        return __DIR__ . '../../../stubs/service.stub';
+        return __DIR__.'../../../stubs/service.stub';
     }
 
     /**
      * Get the stub variables.
-     *
-     * @return array
      */
     public function getStubVariable(): array
     {
         return [
             'NAMESPACE' => 'App\\Services',
-            'CLASS_NAME' => $this->getSingularClassName($this->argument('name'))
+            'CLASS_NAME' => $this->getSingularClassName($this->argument('name')),
         ];
     }
 
     /**
      * Get the source file contents.
-     *
-     * @return string|false
      */
     public function getSourceFile(): string|false
     {
@@ -116,18 +102,13 @@ class ServiceMakerCommand extends Command
 
     /**
      * Get the contents of a stub file.
-     *
-     * @param  string  $stub
-     * @param  array  $stubVariables
-     * @return string|false
      */
     public function getStubContents(string $stub, array $stubVariables = []): string|false
     {
         $contents = file_get_contents($stub);
 
-        foreach ($stubVariables as $search => $replace)
-        {
-            $contents = str_replace('$' . $search . '$', $replace, $contents);
+        foreach ($stubVariables as $search => $replace) {
+            $contents = str_replace('$'.$search.'$', $replace, $contents);
         }
 
         return $contents;
@@ -135,19 +116,14 @@ class ServiceMakerCommand extends Command
 
     /**
      * Get the path to the source file.
-     *
-     * @return string
      */
     public function getSourceFilePath(): string
     {
-        return base_path('app/Services/') . $this->getSingularClassName($this->argument('name')) . 'Service.php';
+        return base_path('app/Services/').$this->getSingularClassName($this->argument('name')).'Service.php';
     }
 
     /**
      * Make the directory if it doesn't exist.
-     *
-     * @param  string  $path
-     * @return string
      */
     protected function makeDirectory(string $path): string
     {
@@ -157,5 +133,4 @@ class ServiceMakerCommand extends Command
 
         return $path;
     }
-
 }
