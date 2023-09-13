@@ -59,7 +59,7 @@ class InterfaceMakerCommand extends Command
             $this->files->put($path, $contents);
             $this->info("File : {$path} created");
         } else {
-            $this->info("File : {$path} already exits");
+            $this->info("File : {$path} already exists");
         }
 
         return self::SUCCESS;
